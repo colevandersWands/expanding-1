@@ -11,9 +11,12 @@
 
   let sum; { // = add(3, 4)
     const args = {a: 3, b: 4}
-    let ret_val; {
+
+    add_frame: {
       ret_val = args.a + args.b
+      break add_frame;
     }
+
     sum = ret_val
   }
 }
