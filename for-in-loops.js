@@ -16,9 +16,11 @@
 { // expanded to while loop
   const obj = {a: 1, b: 2}
   const keys = Object.keys(obj)
-  let i = 0;
-  while (i < keys.length) {
-    console.log(obj[keys[i]])
-    i++
+  {
+    let i = 0;
+    while (i < keys.length) {
+      console.log(obj[keys[i]])
+      i++
+    }
   }
 }
