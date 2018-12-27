@@ -7,6 +7,7 @@ Exercises: (todo)
   
 learning objectives
 - not being intimidated by dense code
+- refactor patterns that you can trust and carry out without deep thinking
 - refactoring for understanding and debugging
 - explaining javascript with javascript
 
