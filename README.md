@@ -87,6 +87,21 @@ your notes:
 
 ### Loops
 
+```js
+  const test_cases = [
+      	{name:'3', args:[3], expected:3},
+		{name:'4', args:[4], expected:6},
+      ];
+
+	let x = _case.args[0];
+	let i = 0;
+  	do {
+    	actual += i;
+    	i++;
+  	} while (i < x);
+
+```
+
 ---
 
 ### Challenges
