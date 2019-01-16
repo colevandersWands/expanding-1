@@ -26,7 +26,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };              
 };
 
-{ // expand out condition
+{ // refactor out condition
   let i = 0;
   let condition = i < 2;
   while (condition) {
