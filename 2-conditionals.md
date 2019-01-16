@@ -97,7 +97,7 @@
 
 ### if, else if, else
 
-```
+```js
 { // original statement
   let a = 3, b = 5, c = 7;
   if (a > b || c) {
@@ -148,6 +148,57 @@
   };
 };
 ```
+---
+
+### nested conditionals
+
+```js
+{ // original statement
+  let a = 3, b = 5, c = 7;
+  if (a > b) {
+    if (b === c) {
+      console.log('if if');
+    } else {
+      console.log('if else');
+    };
+  }  else {
+    if (a <= c) {
+      console.log('else if');
+    } else {
+      console.log('else else');
+    };
+  };
+};
+
+{ // refactor out conditions
+  let a = 3, b = 5, c = 7;
+  {
+    const cond_1 = a > b;
+    if (cond_1) {
+      const cond_2 = b === c;
+      if (cond_2) {
+        console.log('if if');
+      } else {
+        console.log('if else');
+      };
+    }  else {
+      const cond_3 = a <= c;
+      if (cond_3) {
+        console.log('else if');
+      } else {
+        console.log('else else');
+      };
+    };
+   };
+};
+
+
+{ // expand condition expressions
+  // (this example doesn't need to)
+};
+```
+
+---
 
 > this isn't quite exactly accurate, if statements actually eval code at runtime. but that's for later. i'll find out where/how at some point
 

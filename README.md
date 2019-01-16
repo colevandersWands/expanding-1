@@ -3,19 +3,24 @@
 Expanding is a _refactoring_ technique (rewriting code without changing it's behavior) that "expands" code until each line has only one operation.  At first your expanded code may feel harder to read than the original code, but keep at it.  Learning to work with expanded code will help enormously understanding new code, tracking down bugs, and inferring strategies from new code. 
 
 
-for this series of exercises you will be given a snippet of code and test cases for that code.  Your task 
+for each exercise you will be given
+* a snippet of code for you to expand
+* test cases to ensure your expansion has the same behavior as the original
+* a mini testing framework to help you check your work at each step
 
+it will be your task to expand the original snippet until it has one operation per line, but still passes the same tests as the original code.
 
 ### Index
 * [learning objectives](#learning-objectives)
-* [Expanding](#expanding)  
+* [Expanding code](#expanding-code)  
 * [test cases](#test-cases)  
 * [testing framework](#testing-framework)
 * [the exercises](#the-exercises)
 
 ---
 
-learning objectives
+## Learning Objectives
+
 * not being intimidated by dense code
 * refactor patterns that you can trust and carry out without deep thinking so you can focus on the important stuff
 * flexibly 'behind-the-scenes' understanding of how code executes
@@ -23,13 +28,29 @@ learning objectives
 * explaining javascript with javascript
 * stepping through expressions one operation at a time
 
+[TOP](#expanding)
+
 ---
 
-# Test Cases
+## Expanding Code
 
-A code's behavior is what has changed _after_ it the code runs, implementation is the lines of code that make this change happen.  In the last exercises on tracing, logging & asserting you saw this difference.  The 'expected' variable described the snippet's _behavior_, while the logs and asserts helped to understand the snippet's _implementation_. This exercise will take you deeper into understanding and documenting code behavior.
+more detailed explanation here
 
-Practically speaking you can think of this in terms of inputs and outputs.   What values did variables have at the top of a snippet, and what values do they have after the snippet?  To use vocabulary, what are the __arguments__ and what is the __expected__ output:
+[expanding expressions](./1-epressions.md)  
+[expanding conditionals](./1-conditionals.md)  
+[expanding loops](./1-loops.md)  
+
+[TOP](#expanding)
+
+---
+
+## Test Cases
+
+A snippet's behavior is what has changed in your program _after_ the snippet has run, implementation is the lines of code that make up the snippet.  In the last exercises on tracing, logging & asserting you saw this without the vocab.  The 'expected' variable described the snippet's _behavior_, while the logs and asserts helped to understand the snippet's _implementation_. This exercise will take a deeper look at implementation, breaking down dense snippets of code into longer pieces of code that illustrate the same implementation one operation at a time.
+
+To make sure that you don't make any mistakes while refactoring the original snippet, we have provided test cases for each one.  With every small change you make, you will run the tests again.  If they pass you've done a correct change.  If any tests fail, revisit your last change and see what went wrong!
+
+Practically speaking you can think of test cases as just inputs and outputs.   What values did variables have at the top of a snippet, and what values do they have after the snippet?  To use vocabulary, what are the __arguments__ and what is the __expected__ output:
 ```js
 const test_cases = [
     {name:'meaningful name', args:['the inputs', 'for this snippet'], expected: 'what it should output'},
@@ -38,15 +59,13 @@ const test_cases = [
   ];
 ```
 
+[TOP](#expanding)
+
 ---
 
 
 ## Testing "Framework"
 
-each exercise on this readme comes with:
-* a snippet of code for you to expand
-* test cases to ensure your expansion has the same behavior as the original
-it will be your task to expand the original snippet until it has one operation per line, but still passes the same tests as the original code.
 
 To go from the original code to the expanded code, it is best to go one small change at a time so you can catch your mistakes right away. The 'framework' below will help you by logging any changes in behavior from one change to the next.
 
@@ -56,10 +75,13 @@ So, to start the exercises paste this framework into the console.  Then paste th
 {
   const test_cases = ;
   for (let _case of test_cases) {
+
+    { // paste snippet challenge here
+
+    };
+
+    // framework magic happens down here
     const expected = _case.expected;
-
-    paste code here
-
     let pass;
     if (typeof expected === 'object') {
       const _actual = JSON.stringify(actual);
@@ -68,7 +90,6 @@ So, to start the exercises paste this framework into the console.  Then paste th
     } else {
       pass = actual === expected;
     };
-
     if (!pass) {
       console.groupCollapsed(`%c ${_case.name}: \n`, 'color:red');
       console.log(`%c   actual: ${typeof actual},`, 'color:red', actual);
@@ -79,7 +100,46 @@ So, to start the exercises paste this framework into the console.  Then paste th
 };
 ```
 
+[TOP](#expanding)
+
+---
+
+## The Exercises
+
+test cases:
+```js
+const test_cases = [
+    {name:'0', args:[0], expected:0},
+    {name:'1', args:[1], expected:0},
+    {name:'2', args:[2], expected:1},
+    {name:'3', args:[3], expected:3},
+    {name:'4', args:[4], expected:6},
+    {name:'5', args:[5], expected:10},
+    {name:'6', args:[6], expected:15},
+    {name:'7', args:[7], expected:21},
+  ];
+```
+snippet:
+```js
+let x = _case.args[0];
+let i = 0;
+let actual = 0;
+
+do {
+  actual += i;
+  i++;
+} while (i < x);
+
+```
+expanded snippet:
+```js
+```
+your notes:
+
 ---
 
 
-
+[TOP](#expanding)
+___
+___
+### <a href="http://janke-learning.org" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/50098409-22575780-021c-11e9-99e1-962787adaded.png" width="40" height="40"></img> Janke Learning</a>
