@@ -155,7 +155,7 @@ your notes:
 
 ---
 
-**If in While**  
+**If in a For Loop**  
 
 test cases: 
 ```js
