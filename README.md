@@ -75,9 +75,9 @@ So, to start the exercises paste this framework into the console.  Then paste th
 {
   const test_cases = ;
   for (let _case of test_cases) {
-
-    { // paste snippet challenge here
-
+  
+    let actual; { 
+        // paste snippet challenge here
     };
 
     // framework magic happens down here
@@ -123,7 +123,7 @@ snippet:
 ```js
 let x = _case.args[0];
 let i = 0;
-let actual = 0;
+actual = 0;
 
 do {
   actual += i;
@@ -133,6 +133,19 @@ do {
 ```
 expanded snippet:
 ```js
+let x = _case.args[0];
+let i = 0;
+actual = 0;
+
+
+actual += i;
+i++;
+let condition = i < x;
+while (condition){
+  actual += i;
+  i++;
+  condition = i < x;
+};
 ```
 your notes:
 
