@@ -24,6 +24,7 @@ it will be your task to expand the original snippet until it has one operation p
 * Completed Examples
     * [Do While](./completed-examples.md/#do-while) 
     * [If in a For Loop](./completed-examples.md/#we-if-in-a-for-loop.md)
+    * (need more of these, but they can come from your practice or live examples)
 * The Exercises
     * [number 1](#1)
     * [number 2](#2)  
