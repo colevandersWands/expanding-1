@@ -45,7 +45,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ```js
 { // do while
-let i = 0;
+  let i = 0;
   do {
     console.log(i + ' (a)');
     i++;
@@ -54,8 +54,10 @@ let i = 0;
 
 { // refactor to while
   let i = 0;
-  console.log(i + ' (b)');
-  i++;
+  { // do
+    console.log(i + ' (b)');
+    i++;  
+  };
   while (i < 2) {
     console.log(i + ' (b)');
     i++;
@@ -64,8 +66,10 @@ let i = 0;
 
 { // expand out condition
   let i = 0;
-  console.log(i + ' (c)');
-  i++;
+  { // do
+    console.log(i + ' (b)');
+    i++;  
+  };
   let condition = i < 2;
   while (condition) {
     console.log(i + ' (c)');
