@@ -78,7 +78,7 @@ So, to start the exercises paste this framework into the console.  Then paste th
 
 ```js
 {
-  const test_cases = ;
+  const test_cases = /* paste in test cases */;
   for (let _case of test_cases) {
   
     let actual; { 
