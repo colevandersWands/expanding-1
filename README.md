@@ -15,7 +15,7 @@ it will be your task to expand the original snippet until it has one operation p
 ### contents 
 * [learning objectives](#learning-objectives)
 * worked examples
-    * [expressions](./1-epressions.md)  
+    * [expressions](./1-expressions.md)  
     * [conditionals](./2-conditionals.md)  
     * [loops](./3-loops.md) 
 * Testing
