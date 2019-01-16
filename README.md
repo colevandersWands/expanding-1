@@ -15,6 +15,7 @@ it will be your task to expand the original snippet until it has one operation p
 * [Expanding code](#expanding-code)  
 * [test cases](#test-cases)  
 * [testing framework](#testing-framework)
+* [completed examples](#completed-examples)
 * [the exercises](#the-exercises)
 
 ---
@@ -104,7 +105,9 @@ So, to start the exercises paste this framework into the console.  Then paste th
 
 ---
 
-## The Exercises
+## Completed Examples
+
+**Do While**  
 
 test cases:
 ```js
@@ -150,6 +153,64 @@ while (condition){
 your notes:
 
 ---
+
+**If in While**  
+
+test cases: 
+```js
+const test_cases = [
+    {name:'10,2,3', args:[10,2,3], expected:[0,6]},
+    {name:'30,5,3', args:[30,5,3], expected:[0,15]},
+    {name:'31,5,3', args:[31,5,3], expected:[0,15,30]},
+    {name:'12,2,3', args:[12,2,3], expected:[0,6]},
+    {name:'12,2,4', args:[12,2,4], expected:[0,4,8]},
+    {name:'12,4,3', args:[12,4,3], expected:[0]},
+    {name:'13,2,3', args:[13,2,3], expected:[0,6,12]},
+    {name:'13,2,4', args:[13,2,4], expected:[0,4,8,12]},
+    {name:'13,4,3', args:[13,4,3], expected:[0,12]},
+  ];
+```
+snippet:
+```js
+actual = [];
+
+const upper = _case.args[0];
+const a = _case.args[1];
+const b = _case.args[2];
+
+for (let i = 0; i < upper; i++) {
+  if (!(i % a) && !(i % b)) {
+    actual.push(i);
+  };
+};
+```
+expanded snippet:
+```js
+actual = [];
+
+const upper = _case.args[0];
+const a = _case.args[1];
+const b = _case.args[2];
+{ // old for loop
+  let i = 0; 
+  let while_cond = i < upper;
+  while (while_cond) {
+    let if_cond; { // !(i % a) && !(i % b);
+        const op_1 = i % a;
+        const op_2 = !op_1;
+        const op_3 = i % b;
+        const op_4 = !op_3;
+        const op_5 = op_2 && op_4;
+    if_cond = op_5;	};
+    if ( if_cond ) {
+      actual.push(i);
+    };
+    i++;
+    while_cond = i < upper;
+  };
+};
+```
+
 
 
 [TOP](#expanding)
