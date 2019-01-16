@@ -175,8 +175,8 @@ if (data_struct instanceof Array) {
    };
 } else if (data_struct instanceof Object) {
    actual = [];
-   for (let item in data_struct) {
-      actual.push(data_struct[item]);
+   for (let key in data_struct) {
+      actual.push(data_struct[key]);
    };
 } else {
    actual = 'invalid input';
@@ -218,6 +218,46 @@ for (let i = 0; i <= upper; i++) {
 };
 
 actual = acumul;
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
+
+### 4
+
+test cases:
+```js
+const test_cases = [
+      {name:'"demorgans", tr, tr', args:['demorgans',true,true], expected: true},
+      {name:'"demorgans", tr, fa', args:['demorgans',true,false], expected: true},
+      {name:'"demorgans", fa, tr', args:['demorgans',false,true], expected: true},
+      {name:'"demorgans", fa, fa', args:['demorgans',false,false], expected: true},
+      {name:'"poo", tr, tr', args:['poo',true,true], expected: 'invalid input'},
+      {name:'"absorption", tr, tr', args:['absorption',true,true], expected: true},
+      {name:'"absorption", tr, fa', args:['absorption',true,false], expected: true},
+      {name:'"absorption", fa, tr', args:['absorption',false,true], expected: true},
+      {name:'"absorption", fa, fa', args:['absorption',false,false], expected: true},
+   ];
+```
+snippet:
+```js
+const law = _case.args[0];
+const a = _case.args[1];
+const b = _case.args[2];
+
+if (law === 'absorption') {
+   actual = (a || a && b) === (a && (a || b));
+} else if (law === 'demorgans') {
+   actual = (!a || !b) === !(a && b);
+} else {
+   actual = 'invalid input';
+};
 ```
 expanded snippet:
 ```js
