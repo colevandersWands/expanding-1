@@ -67,7 +67,7 @@ So, to start the exercises paste this framework into the console.  Then paste th
 
 ### Expressions
 
-__1__  
+__1.__  
 original code:
 ```js
 ```
