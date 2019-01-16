@@ -145,8 +145,6 @@ const test_cases = [
 ```
 snippet:
 ```js
-actual = 0;
-
 let a = _case.args[0];
 let b = _case.args[1];
 let c = _case.args[2];
@@ -158,7 +156,7 @@ if (a && b) {
 } else if (!a && b) {
    actual = c && b;
 } else { 
-   actual = c && b;
+   actual = c && !a && !b;
 };
 ```
 expanded snippet:
