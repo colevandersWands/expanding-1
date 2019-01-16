@@ -111,24 +111,8 @@ So, to start the exercises paste this framework into the console.  Then paste th
 
 ---
 
+
 ### 1
-
-test cases:
-```js
-```
-snippet:
-```js
-```
-expanded snippet:
-```js
-```
-your notes:
-
-[TOP](#expanding)
-
----
-
-### 2
 
 test cases:
 ```js
@@ -168,6 +152,44 @@ your notes:
 
 ---
 
+### 2
+
+test cases:
+```js
+const test_cases = [
+      {name:'8', args:[8], expected:'invalid input'},
+      {name:'[3,2,1]', args:[[3,2,1]], expected: {0:3, 1:2, 2:1}},
+      {name:'{1:3, 2:2, 3:1}', args:[{1:3, 2:2, 3:1}], expected: [3,2,1]},
+   ];
+```
+snippet:
+```js
+const data_struct = _case.args[0];
+
+if (data_struct instanceof Array) {
+   actual = {};
+   let key = 0;
+   for (let item of data_struct) {
+      actual[key] = item;
+      key++;
+   };
+} else if (data_struct instanceof Object) {
+   actual = [];
+   for (let item in data_struct) {
+      actual.push(data_struct[item]);
+   };
+} else {
+   actual = 'invalid input';
+};
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
 
 ### 3
 
