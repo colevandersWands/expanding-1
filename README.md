@@ -113,9 +113,101 @@ So, to start the exercises paste this framework into the console.  Then paste th
 
 ### 1
 
+test cases:
+```js
+```
+snippet:
+```js
+```
+expanded snippet:
+```js
+```
+your notes:
+
 [TOP](#expanding)
 
 ---
+
+### 2
+
+test cases:
+```js
+const test_cases = [
+      {name:'tr, tr, tr', args:[true,true,true], expected:true},
+      {name:'tr, fa, tr', args:[true,false,true], expected:true},
+      {name:'fa, tr, tr', args:[false,true,true], expected:true},
+      {name:'fa, fa, tr', args:[false,false,true], expected:true},
+      {name:'tr, tr, fa', args:[true,true,false], expected:false},
+      {name:'tr, fa, fa', args:[true,false,false], expected:false},
+      {name:'fa, tr, fa', args:[false,true,false], expected:false},
+      {name:'fa, fa, fa', args:[false,false,false], expected:false},
+   ];
+```
+snippet:
+```js
+actual = 0;
+
+let a = _case.args[0];
+let b = _case.args[1];
+let c = _case.args[2];
+
+if (a && b) {
+   actual = c && a;
+} else if (a && !b) {
+   actual = c && a;
+} else if (!a && b) {
+   actual = c && b;
+} else { 
+   actual = c && b;
+};
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
+
+### 3
+
+test cases:
+```js
+const test_cases = [
+      {name:'10, 3', args:[10,3], expected:18},
+      {name:'10, 2', args:[10,2], expected:30},
+      {name:'5, 8', args:[10,3], expected:0},
+      {name:'8, 5', args:[10,3], expected:5},
+      {name:'1e3, 999', args:[1e3,999], expected:999},
+   ];
+```
+snippet:
+```js
+actual = 0;
+
+let upper = _case.args[0];
+let modulus = _case.args[1];
+let acumul = 0;
+
+for (let i = 0; i <= upper; i++) {
+   if ( !(i % modulus) ) {
+      acumul = acumul + i;
+   };
+};
+
+actual = acumul;
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
 
 ### Big Long Challenge
 
