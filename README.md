@@ -10,13 +10,23 @@ for each exercise you will be given
 
 it will be your task to expand the original snippet until it has one operation per line, but still passes the same tests as the original code.
 
-### Index
+
+
+### contents 
 * [learning objectives](#learning-objectives)
-* [Expanding code](#expanding-code)  
-* [test cases](#test-cases)  
-* [testing framework](#testing-framework)
-* [completed examples](#completed-examples)
-* [the exercises](#the-exercises)
+* worked examples
+    * [expressions](./1-epressions.md)  
+    * [conditionals](./2-conditionals.md)  
+    * [loops](./3-loops.md) 
+* Testing
+    * [test cases](#test-cases)
+    * [testing "framework"](#testing-framework)
+* Completed Examples
+    * [Do While](./completed-examples.md/#do-while) 
+    * [If in a For Loop](./completed-examples.md/#we-if-in-a-for-loop.md)
+* The Exercises
+    * [big long challenge](#big-long-challenge)
+
 
 ---
 
@@ -29,19 +39,6 @@ it will be your task to expand the original snippet until it has one operation p
 * explaining javascript with javascript
 * stepping through expressions one operation at a time
 
-[TOP](#expanding)
-
----
-
-## Expanding Code
-
-more detailed explanation here
-
-[expanding expressions](./1-epressions.md)  
-[expanding conditionals](./1-conditionals.md)  
-[expanding loops](./1-loops.md)  
-
-[TOP](#expanding)
 
 ---
 
@@ -105,116 +102,43 @@ So, to start the exercises paste this framework into the console.  Then paste th
 
 ---
 
-## Completed Examples
 
-**Do While**  
+### Big Long Challenge
 
+snippet:
+```js
+actual = {};
+
+const items_obj = _case.args[0];
+const filter_for = _case.args[1];
+
+if (filter_for === 'str') {
+  for (let key in items) {
+    if (typeof items[key] === 'string') {
+      actual[key] = items[key];
+    };
+  };
+} else if (filter_for === 'num') {
+   for (let key in items) {
+    if (typeof items[key] === 'string') {
+      actual[key] = items[key];
+    };
+  };
+} else {
+  for (let key in items) {
+    actual[key] = items[key];
+  };
+};
+```
 test cases:
 ```js
 const test_cases = [
-    {name:'0', args:[0], expected:0},
-    {name:'1', args:[1], expected:0},
-    {name:'2', args:[2], expected:1},
-    {name:'3', args:[3], expected:3},
-    {name:'4', args:[4], expected:6},
-    {name:'5', args:[5], expected:10},
-    {name:'6', args:[6], expected:15},
-    {name:'7', args:[7], expected:21},
+    {name:}
   ];
 ```
-snippet:
-```js
-let x = _case.args[0];
-let i = 0;
-actual = 0;
-
-do {
-  actual += i;
-  i++;
-} while (i < x);
-
-```
-expanded snippet:
-```js
-let x = _case.args[0];
-let i = 0;
-actual = 0;
-
-{ // do
-  actual += i; 
-  i++;
-};
-let condition = i < x;
-while (condition){
-  actual += i;
-  i++;
-  condition = i < x;
-};
-```
-your notes:
-
----
-
-**If in a For Loop**  
-
-test cases: 
-```js
-const test_cases = [
-    {name:'10,2,3', args:[10,2,3], expected:[0,6]},
-    {name:'30,5,3', args:[30,5,3], expected:[0,15]},
-    {name:'31,5,3', args:[31,5,3], expected:[0,15,30]},
-    {name:'12,2,3', args:[12,2,3], expected:[0,6]},
-    {name:'12,2,4', args:[12,2,4], expected:[0,4,8]},
-    {name:'12,4,3', args:[12,4,3], expected:[0]},
-    {name:'13,2,3', args:[13,2,3], expected:[0,6,12]},
-    {name:'13,2,4', args:[13,2,4], expected:[0,4,8,12]},
-    {name:'13,4,3', args:[13,4,3], expected:[0,12]},
-  ];
-```
-snippet:
-```js
-actual = [];
-
-const upper = _case.args[0];
-const a = _case.args[1];
-const b = _case.args[2];
-
-for (let i = 0; i < upper; i++) {
-  if (!(i % a) && !(i % b)) {
-    actual.push(i);
-  };
-};
-```
-expanded snippet:
-```js
-actual = [];
-
-const upper = _case.args[0];
-const a = _case.args[1];
-const b = _case.args[2];
-{ // old for loop
-  let i = 0; 
-  let while_cond = i < upper;
-  while (while_cond) {
-    let if_cond; { // !(i % a) && !(i % b);
-        const op_1 = i % a;
-        const op_2 = !op_1;
-        const op_3 = i % b;
-        const op_4 = !op_3;
-        const op_5 = op_2 && op_4;
-    if_cond = op_5;	};
-    if ( if_cond ) {
-      actual.push(i);
-    };
-    i++;
-    while_cond = i < upper;
-  };
-};
-```
-
-
 
 [TOP](#expanding)
+
 ___
 ___
 ### <a href="http://janke-learning.org" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/50098409-22575780-021c-11e9-99e1-962787adaded.png" width="40" height="40"></img> Janke Learning</a>

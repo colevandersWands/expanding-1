@@ -15,7 +15,7 @@ and finally, using the testing framework in console will help you catch mistakes
 
 ### Examples
 
-1:
+**1:**  
 ```js
 { // single-line expression
   const a = 1, b = 'e', c = true;
@@ -31,8 +31,9 @@ and finally, using the testing framework in console will help you catch mistakes
   result = op_3 }; 
 };
 ```
+---
 
-2: 
+**2:**  
 ```js
 { // single-line expression
   const a = 0, b = null, c = '';
@@ -48,9 +49,9 @@ and finally, using the testing framework in console will help you catch mistakes
   result = op_3 }; 
 };
 ```
+---
 
-
-3: 
+**3:***  
 ```js
 { // single-line expression
   const a = 1e3, b, c = Infinity;

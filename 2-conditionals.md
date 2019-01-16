@@ -47,6 +47,8 @@
 };
 ```
 
+[TOP](#expanding-conditions)
+
 ---
 
 ### if else
@@ -92,6 +94,7 @@
   };
 };
 ```
+[TOP](#expanding-conditions)
 
 ---
 
@@ -148,6 +151,8 @@
   };
 };
 ```
+[TOP](#expanding-conditions)
+
 ---
 
 ### nested conditionals
@@ -197,10 +202,11 @@
   // (this example doesn't need to)
 };
 ```
+[TOP](#expanding-conditions)
 
 ---
 
-> this isn't quite exactly accurate, if statements actually eval code at runtime. but that's for later. i'll find out where/how at some point
+> this isn't quite exactly JS-behind-the-scenes accurate, condition checks actually eval code at runtime. but that's for later. i'll find out where/how at some point
 
 ___
 ___
