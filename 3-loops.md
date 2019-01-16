@@ -64,7 +64,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 };
 
-{ // expand out condition
+{ // refactor out condition
   let i = 0;
   { // do
     console.log(i + ' (b)');
@@ -103,7 +103,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 }
 
-{ // expand out condition
+{ // refactor out condition
   {
     let i = 0;
     let condition = i < 2;
@@ -146,7 +146,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 };
 
-{ // expand out condition
+{ // refactor out condition
   const arr = [0, 1]
   { let i = 0;
     let condition = i < arr.length;
@@ -192,7 +192,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 };
 
-{ // expand out condition
+{ // refactor out condition
   const obj = {a: 0, b: 1};
   const keys = Object.keys(obj)
   { let i = 0;
