@@ -140,9 +140,10 @@ let x = _case.args[0];
 let i = 0;
 actual = 0;
 
-
-actual += i;
-i++;
+{ // do
+  actual += i; 
+  i++;
+};
 let condition = i < x;
 while (condition){
   actual += i;
