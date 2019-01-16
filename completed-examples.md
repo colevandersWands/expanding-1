@@ -10,17 +10,6 @@ some fully completed examples to study.
 
 ## Do While
 
-snippet:
-```js
-let x = _case.args[0];
-let i = 0;
-actual = 0;
-
-do {
-  actual += i;
-  i++;
-} while (i < x);
-```
 test cases:
 ```js
 const test_cases = [
@@ -33,6 +22,17 @@ const test_cases = [
     {name:'6', args:[6], expected:15},
     {name:'7', args:[7], expected:21},
   ];
+```
+snippet:
+```js
+let x = _case.args[0];
+let i = 0;
+actual = 0;
+
+do {
+  actual += i;
+  i++;
+} while (i < x);
 ```
 expanded snippet:
 ```js
@@ -60,21 +60,6 @@ your notes:
 
 ## If in a For Loop
 
-
-snippet:
-```js
-actual = [];
-
-const upper = _case.args[0];
-const a = _case.args[1];
-const b = _case.args[2];
-
-for (let i = 0; i < upper; i++) {
-  if (!(i % a) && !(i % b)) {
-    actual.push(i);
-  };
-};
-```
 test cases: 
 ```js
 const test_cases = [
@@ -88,6 +73,20 @@ const test_cases = [
     {name:'13,2,4', args:[13,2,4], expected:[0,4,8,12]},
     {name:'13,4,3', args:[13,4,3], expected:[0,12]},
   ];
+```
+snippet:
+```js
+actual = [];
+
+const upper = _case.args[0];
+const a = _case.args[1];
+const b = _case.args[2];
+
+for (let i = 0; i < upper; i++) {
+  if (!(i % a) && !(i % b)) {
+    actual.push(i);
+  };
+};
 ```
 expanded snippet:
 ```js

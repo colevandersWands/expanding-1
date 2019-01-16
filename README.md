@@ -105,6 +105,12 @@ So, to start the exercises paste this framework into the console.  Then paste th
 
 ### Big Long Challenge
 
+test cases:
+```js
+const test_cases = [
+    {name:}
+  ];
+```
 snippet:
 ```js
 actual = {};
@@ -130,12 +136,7 @@ if (filter_for === 'str') {
   };
 };
 ```
-test cases:
-```js
-const test_cases = [
-    {name:}
-  ];
-```
+
 
 [TOP](#expanding)
 
