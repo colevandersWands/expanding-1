@@ -25,6 +25,11 @@ it will be your task to expand the original snippet until it has one operation p
     * [Do While](./completed-examples.md/#do-while) 
     * [If in a For Loop](./completed-examples.md/#we-if-in-a-for-loop.md)
 * The Exercises
+    * [number 1](#1)
+    * [number 2](#2)  
+    * [number 3](#3)  
+    * [number 4](#4)  
+    * [number 5](#5)  
     * [big long challenge](#big-long-challenge)
 
 
@@ -33,12 +38,14 @@ it will be your task to expand the original snippet until it has one operation p
 ## Learning Objectives
 
 * not being intimidated by dense code
+* breaking down dense code into small, understandable pices
 * refactor patterns that you can trust and carry out without deep thinking so you can focus on the important stuff
 * flexibly 'behind-the-scenes' understanding of how code executes
 * refactoring for understanding and debugging
 * explaining javascript with javascript
 * stepping through expressions one operation at a time
 
+[TOP](#expanding)
 
 ---
 
@@ -67,7 +74,7 @@ const test_cases = [
 
 To go from the original code to the expanded code, it is best to go one small change at a time so you can catch your mistakes right away. The 'framework' below will help you by logging any changes in behavior from one change to the next.
 
-So, to start the exercises paste this framework into the console.  Then paste the test cases and original code you want to study into the blanks, run it once to make sure everything is in order.  After you've fully expanded the snippet, paste it from the console into this README and move on to the next challenge.
+So, to start the exercises paste this framework into the console.  Then paste the test cases and original code you want to study into the blanks, run it once to make sure everything is in order. You can test your small changes by hitting enter, and you can return to previous attempts with the up arrow. After you've fully expanded the snippet, paste it from the console into it's space on this README and move to the next exercise.
 
 ```js
 {
@@ -97,18 +104,27 @@ So, to start the exercises paste this framework into the console.  Then paste th
   };
 };
 ```
+---
+---
+
+## The Exercises
+
+---
+
+### 1
 
 [TOP](#expanding)
 
 ---
-
 
 ### Big Long Challenge
 
 test cases:
 ```js
 const test_cases = [
-    {name:}
+    {name:'1,"2",null. str', args:[{a:1,b:'2',c:null},'str'], expected:{b:'2'}},
+    {name:'1,"2",null. num', args:[{a:1,b:'2',c:null},'num'], expected:{a:1}},
+    {name:'1,"2",null. poo', args:[{a:1,b:'2',c:null},'poo'], expected:{c:null}},
   ];
 ```
 snippet:
@@ -126,17 +142,22 @@ if (filter_for === 'str') {
   };
 } else if (filter_for === 'num') {
    for (let key in items) {
-    if (typeof items[key] === 'string') {
+    if (typeof items[key] === 'number') {
       actual[key] = items[key];
     };
   };
 } else {
-  for (let key in items) {
-    actual[key] = items[key];
+  for (let key in items_obj) {
+    if (typeof items[key] !== 'number' && typeof items[key] !== 'string') {
+      actual[key] = items[key];
+    };
   };
 };
 ```
-
+expanded snippet:
+```js
+```
+your notes:
 
 [TOP](#expanding)
 
