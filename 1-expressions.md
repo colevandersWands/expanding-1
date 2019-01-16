@@ -51,7 +51,7 @@ and finally, using the testing framework in console will help you catch mistakes
 ```
 ---
 
-**3:***  
+**3:**  
 ```js
 { // single-line expression
   const a = 1e3, b, c = Infinity;
