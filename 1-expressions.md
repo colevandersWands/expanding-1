@@ -19,7 +19,7 @@ and finally, using the testing framework in console will help you catch mistakes
 ```js
 { // single-line expression
   const a = 1, b = 'e', c = true;
-  const result = a || b + !c;
+  const result = a || b === !c;
 };
 
 { // expanded expression

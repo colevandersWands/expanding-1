@@ -4,6 +4,8 @@ words
 * expanding out the condition because the condition evaluation counts as an operation, and we can only have one per line
 * the base of all iteration expansions is a while loop with the condition extracted
 
+these examples all contain 1-operation conditions that do not need to be expanded for simplicity.  you will want to expand conditions just like in if's if they are multi-step, this will help a lot in real-life debugging and developing.
+
 ### Contents
 * [while](#while)
 * [do while](#do-while)  
