@@ -97,7 +97,7 @@
 
 ### if, else if, else
 
-```
+```js
 { // original statement
   let a = 3, b = 5, c = 7;
   if (a > b || c) {
