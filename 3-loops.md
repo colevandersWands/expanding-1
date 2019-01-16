@@ -175,16 +175,18 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 { // refactor to for loop
   const obj = {a: 0, b: 1};
-  const keys = Object.keys(obj)
-  for (let i = 0; i < keys.length; i++) {
-    console.log(keys[i]+': ', obj[keys[i]], ' (b)');
-  };
+  { // creating a block to keek new 'keys' variable from global
+    const keys = Object.keys(obj)
+    for (let i = 0; i < keys.length; i++) {
+      console.log(keys[i]+': ', obj[keys[i]], ' (b)');
+    };
+   };
 };
 
 { // refactor to while loop
   const obj = {a: 0, b: 1};
-  const keys = Object.keys(obj)
-  { let i = 0;
+  { const keys = Object.keys(obj)
+    let i = 0;
     while (i < keys.length) {
       console.log(keys[i]+': ', obj[keys[i]], ' (c)');
       i++;
@@ -194,8 +196,8 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 { // refactor out condition
   const obj = {a: 0, b: 1};
-  const keys = Object.keys(obj)
-  { let i = 0;
+  { const keys = Object.keys(obj)
+    let i = 0;
     let condition = i < keys.length;
     while (condition) {
       console.log(keys[i]+': ', obj[keys[i]], ' (d)');
