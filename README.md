@@ -39,7 +39,8 @@ it will be your task to expand the original snippet until it has one operation p
 
 * not being intimidated by dense code
 * breaking down dense code into small, understandable pices
-* refactor patterns that you can trust and carry out without deep thinking so you can focus on the important stuff
+* learning to trust yourself when manipulating code
+* rewriting code without completely understanding it, in order to understand it
 * flexibly 'behind-the-scenes' understanding of how code executes
 * refactoring for understanding and debugging
 * explaining javascript with javascript
