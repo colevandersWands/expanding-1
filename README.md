@@ -270,6 +270,43 @@ your notes:
 ---
 
 
+### 5
+
+test cases:
+```js
+const test_cases = [
+      {name:'2X2 nulls', args:[2,2,null], expected: [[null,null],[null,null]] },
+      {name:'2X2 []\'s', args:[2,2,[]], expected: [[[],[]],[[],[]]] },
+      {name:'3X3 0s', args:[3,3,0], expected: [[0,0,0],[0,0,0],[0,0,0]] },
+      {name:'1X1 undefined', args:[1,1,undefined], expected: [[undefined]] },
+      {name:'2X3 6s', args:[2,3,6], expected: [[6,6,6],[6,6,6]] },
+      {name:'3X2 6s', args:[3,2,6], expected: [[6,6],[6,6],[6,6]] },
+   ];
+```
+snippet:
+```js
+actual = [];
+let outer_size = _case.args[0];
+let inner_size = _case.args[1];
+let filler = _case.args[2];
+
+for (let i = 0; i < outer_size; i++) {
+   actual.push([]);
+   for (let j = 0; j < inner_size; j++) {
+      actual[i].push(filler);
+   };
+};
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
+
 ### Big Long Challenge
 
 test cases:
