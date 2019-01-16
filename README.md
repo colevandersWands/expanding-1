@@ -6,7 +6,6 @@ Expanding is a _refactoring_ technique (rewriting code without changing it's beh
 for each exercise you will be given
 * a snippet of code for you to expand
 * test cases to ensure your expansion has the same behavior as the original
-* a mini testing framework to help you check your work at each step
 
 it will be your task to expand the original snippet until it has one operation per line, but still passes the same tests as the original code.
 
