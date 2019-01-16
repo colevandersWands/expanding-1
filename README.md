@@ -3,6 +3,18 @@
 Expanding is a _refactoring_ technique (rewriting code without changing it's behavior) that "expands" code until each line has only one operation.  At first your expanded code may feel harder to read than the original code, but keep at it.  Learning to work with expanded code will help enormously understanding new code, tracking down bugs, and inferring strategies from new code. 
 
 
+for this series of exercises you will be given a snippet of code and test cases for that code.  Your task 
+
+
+### Index
+* [learning objectives](#learning-objectives)
+* [Expanding](#expanding)  
+* [test cases](#test-cases)  
+* [testing framework](#testing-framework)
+* [the exercises](#the-exercises)
+
+---
+
 learning objectives
 * not being intimidated by dense code
 * refactor patterns that you can trust and carry out without deep thinking so you can focus on the important stuff
@@ -11,10 +23,20 @@ learning objectives
 * explaining javascript with javascript
 * stepping through expressions one operation at a time
 
+---
 
-### Index
-* [testing framework](#testing-framework)
-* [the exercises](#the-exercises)
+# Test Cases
+
+A code's behavior is what has changed _after_ it the code runs, implementation is the lines of code that make this change happen.  In the last exercises on tracing, logging & asserting you saw this difference.  The 'expected' variable described the snippet's _behavior_, while the logs and asserts helped to understand the snippet's _implementation_. This exercise will take you deeper into understanding and documenting code behavior.
+
+Practically speaking you can think of this in terms of inputs and outputs.   What values did variables have at the top of a snippet, and what values do they have after the snippet?  To use vocabulary, what are the __arguments__ and what is the __expected__ output:
+```js
+const test_cases = [
+    {name:'meaningful name', args:['the inputs', 'for this snippet'], expected: 'what it should output'},
+    {name:'another test case', args:['different', 'inputs'], expected: 'the expected output'},
+    ...
+  ];
+```
 
 ---
 
