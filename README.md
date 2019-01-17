@@ -97,7 +97,7 @@ expanding_framework: {
       pass = actual === expected;
     };
     if (!pass) {
-      console.groupCollapsed(`%c ${_case.name}: \n`, 'color:red');
+      console.groupCollapsed(`%c ${_case.name}: `, 'color:red');
       console.log(`%c   actual: ${typeof actual},`, 'color:red', actual);
       console.log(`%c   expected: ${typeof expected},`, 'color:blue', expected);
       console.groupEnd();
