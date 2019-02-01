@@ -6,7 +6,6 @@ Expanding is a _refactoring_ technique (rewriting code without changing it's beh
 for each exercise you will be given
 * a snippet of code for you to expand
 * test cases to ensure your expansion has the same behavior as the original
-* a mini testing framework to help you check your work at each step
 
 it will be your task to expand the original snippet until it has one operation per line, but still passes the same tests as the original code.
 
@@ -15,7 +14,7 @@ it will be your task to expand the original snippet until it has one operation p
 ### contents 
 * [learning objectives](#learning-objectives)
 * worked examples
-    * [expressions](./1-epressions.md)  
+    * [expressions](./1-expressions.md)  
     * [conditionals](./2-conditionals.md)  
     * [loops](./3-loops.md) 
 * Testing
@@ -24,7 +23,13 @@ it will be your task to expand the original snippet until it has one operation p
 * Completed Examples
     * [Do While](./completed-examples.md/#do-while) 
     * [If in a For Loop](./completed-examples.md/#we-if-in-a-for-loop.md)
+    * (need more of these, but they can come from your practice or live examples)
 * The Exercises
+    * [number 1](#1)
+    * [number 2](#2)  
+    * [number 3](#3)  
+    * [number 4](#4)  
+    * [number 5](#5)  
     * [big long challenge](#big-long-challenge)
 
 
@@ -33,12 +38,15 @@ it will be your task to expand the original snippet until it has one operation p
 ## Learning Objectives
 
 * not being intimidated by dense code
-* refactor patterns that you can trust and carry out without deep thinking so you can focus on the important stuff
+* breaking down dense code into small, understandable pices
+* learning to trust yourself when manipulating code
+* rewriting code without completely understanding it, in order to understand it
 * flexibly 'behind-the-scenes' understanding of how code executes
 * refactoring for understanding and debugging
 * explaining javascript with javascript
 * stepping through expressions one operation at a time
 
+[TOP](#expanding)
 
 ---
 
@@ -67,11 +75,11 @@ const test_cases = [
 
 To go from the original code to the expanded code, it is best to go one small change at a time so you can catch your mistakes right away. The 'framework' below will help you by logging any changes in behavior from one change to the next.
 
-So, to start the exercises paste this framework into the console.  Then paste the test cases and original code you want to study into the blanks, run it once to make sure everything is in order.  After you've fully expanded the snippet, paste it from the console into this README and move on to the next challenge.
+So, to start the exercises paste this framework into the console.  Then paste the test cases and original code you want to study into the blanks, run it once to make sure everything is in order. You can test your small changes by hitting enter, and you can return to previous attempts with the up arrow. After you've fully expanded the snippet, paste it from the console into it's space on this README and move to the next exercise.
 
 ```js
 expanding_framework: {
-  const test_cases = ;
+  const test_cases = /* paste in test cases */;
   for (let _case of test_cases) {
   
     let actual; { 
@@ -89,7 +97,7 @@ expanding_framework: {
       pass = actual === expected;
     };
     if (!pass) {
-      console.groupCollapsed(`%c ${_case.name}: \n`, 'color:red');
+      console.groupCollapsed(`%c ${_case.name}: `, 'color:red');
       console.log(`%c   actual: ${typeof actual},`, 'color:red', actual);
       console.log(`%c   expected: ${typeof expected},`, 'color:blue', expected);
       console.groupEnd();
@@ -97,6 +105,202 @@ expanding_framework: {
   };
 };
 ```
+---
+---
+
+## The Exercises
+
+---
+
+
+### 1
+
+test cases:
+```js
+const test_cases = [
+      {name:'tr, tr, tr', args:[true,true,true], expected:true},
+      {name:'tr, fa, tr', args:[true,false,true], expected:true},
+      {name:'fa, tr, tr', args:[false,true,true], expected:true},
+      {name:'fa, fa, tr', args:[false,false,true], expected:true},
+      {name:'tr, tr, fa', args:[true,true,false], expected:false},
+      {name:'tr, fa, fa', args:[true,false,false], expected:false},
+      {name:'fa, tr, fa', args:[false,true,false], expected:false},
+      {name:'fa, fa, fa', args:[false,false,false], expected:false},
+   ];
+```
+snippet:
+```js
+let a = _case.args[0];
+let b = _case.args[1];
+let c = _case.args[2];
+
+if (a && b) {
+   actual = c && a;
+} else if (a && !b) {
+   actual = c && a;
+} else if (!a && b) {
+   actual = c && b;
+} else { 
+   actual = c && !a && !b;
+};
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
+### 2
+
+test cases:
+```js
+const test_cases = [
+      {name:'8', args:[8], expected:'invalid input'},
+      {name:'[3,2,1]', args:[[3,2,1]], expected: {0:3, 1:2, 2:1}},
+      {name:'{1:3, 2:2, 3:1}', args:[{1:3, 2:2, 3:1}], expected: [3,2,1]},
+   ];
+```
+snippet:
+```js
+const data_struct = _case.args[0];
+
+if (data_struct instanceof Array) {
+   actual = {};
+   let key = 0;
+   for (let item of data_struct) {
+      actual[key] = item;
+      key++;
+   };
+} else if (data_struct instanceof Object) {
+   actual = [];
+   for (let key in data_struct) {
+      actual.push(data_struct[key]);
+   };
+} else {
+   actual = 'invalid input';
+};
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
+### 3
+
+test cases:
+```js
+const test_cases = [
+      {name:'10, 3', args:[10,3], expected:18},
+      {name:'10, 2', args:[10,2], expected:30},
+      {name:'5, 8', args:[10,3], expected:0},
+      {name:'8, 5', args:[10,3], expected:5},
+      {name:'1e3, 999', args:[1e3,999], expected:999},
+   ];
+```
+snippet:
+```js
+actual = 0;
+
+let upper = _case.args[0];
+let modulus = _case.args[1];
+let acumul = 0;
+
+for (let i = 0; i <= upper; i++) {
+   if ( !(i % modulus) ) {
+      acumul = acumul + i;
+   };
+};
+
+actual = acumul;
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
+
+### 4
+
+test cases:
+```js
+const test_cases = [
+      {name:'"demorgans", tr, tr', args:['demorgans',true,true], expected: true},
+      {name:'"demorgans", tr, fa', args:['demorgans',true,false], expected: true},
+      {name:'"demorgans", fa, tr', args:['demorgans',false,true], expected: true},
+      {name:'"demorgans", fa, fa', args:['demorgans',false,false], expected: true},
+      {name:'"poo", tr, tr', args:['poo',true,true], expected: 'invalid input'},
+      {name:'"absorption", tr, tr', args:['absorption',true,true], expected: true},
+      {name:'"absorption", tr, fa', args:['absorption',true,false], expected: true},
+      {name:'"absorption", fa, tr', args:['absorption',false,true], expected: true},
+      {name:'"absorption", fa, fa', args:['absorption',false,false], expected: true},
+   ];
+```
+snippet:
+```js
+const law = _case.args[0];
+const a = _case.args[1];
+const b = _case.args[2];
+
+if (law === 'absorption') {
+   actual = (a || a && b) === (a && (a || b));
+} else if (law === 'demorgans') {
+   actual = (!a || !b) === !(a && b);
+} else {
+   actual = 'invalid input';
+};
+```
+expanded snippet:
+```js
+```
+your notes:
+
+[TOP](#expanding)
+
+---
+
+
+### 5
+
+test cases:
+```js
+const test_cases = [
+      {name:'2X2 nulls', args:[2,2,null], expected: [[null,null],[null,null]] },
+      {name:'2X2 []\'s', args:[2,2,[]], expected: [[[],[]],[[],[]]] },
+      {name:'3X3 0s', args:[3,3,0], expected: [[0,0,0],[0,0,0],[0,0,0]] },
+      {name:'1X1 undefined', args:[1,1,undefined], expected: [[undefined]] },
+      {name:'2X3 6s', args:[2,3,6], expected: [[6,6,6],[6,6,6]] },
+      {name:'3X2 6s', args:[3,2,6], expected: [[6,6],[6,6],[6,6]] },
+   ];
+```
+snippet:
+```js
+actual = [];
+let outer_size = _case.args[0];
+let inner_size = _case.args[1];
+let filler = _case.args[2];
+
+for (let i = 0; i < outer_size; i++) {
+   actual.push([]);
+   for (let j = 0; j < inner_size; j++) {
+      actual[i].push(filler);
+   };
+};
+```
+expanded snippet:
+```js
+```
+your notes:
 
 [TOP](#expanding)
 
@@ -108,7 +312,9 @@ expanding_framework: {
 test cases:
 ```js
 const test_cases = [
-    {name:}
+    {name:'1,"2",null. str', args:[{a:1,b:'2',c:null},'str'], expected:{b:'2'}},
+    {name:'1,"2",null. num', args:[{a:1,b:'2',c:null},'num'], expected:{a:1}},
+    {name:'1,"2",null. poo', args:[{a:1,b:'2',c:null},'poo'], expected:{c:null}},
   ];
 ```
 snippet:
@@ -126,17 +332,22 @@ if (filter_for === 'str') {
   };
 } else if (filter_for === 'num') {
    for (let key in items) {
-    if (typeof items[key] === 'string') {
+    if (typeof items[key] === 'number') {
       actual[key] = items[key];
     };
   };
 } else {
-  for (let key in items) {
-    actual[key] = items[key];
+  for (let key in items_obj) {
+    if (typeof items[key] !== 'number' && typeof items[key] !== 'string') {
+      actual[key] = items[key];
+    };
   };
 };
 ```
-
+expanded snippet:
+```js
+```
+your notes:
 
 [TOP](#expanding)
 

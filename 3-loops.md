@@ -2,7 +2,7 @@
 
 words
 * expanding out the condition because the condition evaluation counts as an operation, and we can only have one per line
-* the base of all iteration expansions is a while loop with the condition extracted
+* the base case of all iteration expansions is a while loop with the condition extracted
 
 these examples all contain 1-operation conditions that do not need to be expanded for simplicity.  you will want to expand conditions just like in if's if they are multi-step, this will help a lot in real-life debugging and developing.
 
@@ -26,7 +26,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };              
 };
 
-{ // expand out condition
+{ // refactor out condition
   let i = 0;
   let condition = i < 2;
   while (condition) {
@@ -64,7 +64,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 };
 
-{ // expand out condition
+{ // refactor out condition
   let i = 0;
   { // do
     console.log(i + ' (b)');
@@ -103,7 +103,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 }
 
-{ // expand out condition
+{ // refactor out condition
   {
     let i = 0;
     let condition = i < 2;
@@ -146,7 +146,7 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 };
 
-{ // expand out condition
+{ // refactor out condition
   const arr = [0, 1]
   { let i = 0;
     let condition = i < arr.length;
@@ -175,16 +175,18 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 { // refactor to for loop
   const obj = {a: 0, b: 1};
-  const keys = Object.keys(obj)
-  for (let i = 0; i < keys.length; i++) {
-    console.log(keys[i]+': ', obj[keys[i]], ' (b)');
-  };
+  { // creating a block to keek new 'keys' variable from global
+    const keys = Object.keys(obj)
+    for (let i = 0; i < keys.length; i++) {
+      console.log(keys[i]+': ', obj[keys[i]], ' (b)');
+    };
+   };
 };
 
 { // refactor to while loop
   const obj = {a: 0, b: 1};
-  const keys = Object.keys(obj)
-  { let i = 0;
+  { const keys = Object.keys(obj)
+    let i = 0;
     while (i < keys.length) {
       console.log(keys[i]+': ', obj[keys[i]], ' (c)');
       i++;
@@ -192,10 +194,10 @@ these examples all contain 1-operation conditions that do not need to be expande
   };
 };
 
-{ // expand out condition
+{ // refactor out condition
   const obj = {a: 0, b: 1};
-  const keys = Object.keys(obj)
-  { let i = 0;
+  { const keys = Object.keys(obj)
+    let i = 0;
     let condition = i < keys.length;
     while (condition) {
       console.log(keys[i]+': ', obj[keys[i]], ' (d)');

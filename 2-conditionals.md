@@ -160,14 +160,14 @@
 ```js
 { // original statement
   let a = 3, b = 5, c = 7;
-  if (a > b) {
-    if (b === c) {
+  if (a > b || c) {
+    if (b === c && a) {
       console.log('if if');
     } else {
       console.log('if else');
     };
   }  else {
-    if (a <= c) {
+    if (a <= c || !b) {
       console.log('else if');
     } else {
       console.log('else else');
@@ -178,16 +178,16 @@
 { // refactor out conditions
   let a = 3, b = 5, c = 7;
   {
-    const cond_1 = a > b;
+    const cond_1 = a > b || c;
     if (cond_1) {
-      const cond_2 = b === c;
+      const cond_2 = b === c && a;
       if (cond_2) {
         console.log('if if');
       } else {
         console.log('if else');
       };
     }  else {
-      const cond_3 = a <= c;
+      const cond_3 = a <= c || !b;
       if (cond_3) {
         console.log('else if');
       } else {
@@ -199,14 +199,38 @@
 
 
 { // expand condition expressions
-  // (this example doesn't need to)
+  let a = 3, b = 5, c = 7;
+  {
+    const cond_1 { // a > b || c;
+      const op_1 = a > b;
+      const op_2 = op_1 || c;
+    cond_1 = op_2; };
+    if (cond_1) {
+      const cond_2 { // b === c && a;
+        const op_1 = c && a;
+        const op_2 = b === op_1;
+      cond_2 = op_2; };
+      if (cond_2) {
+        console.log('if if');
+      } else {
+        console.log('if else');
+      };
+    }  else {
+      const cond_3 { // a <= c || !b;
+        const op_1 = a <= c;
+        const op_2 = !b;
+        const op_3 = op_1 || op_2;
+      cond_3 = op_3; };
+      if (cond_3) {
+        console.log('else if');
+      } else {
+        console.log('else else');
+      };
+    };
+   };
 };
 ```
 [TOP](#expanding-conditions)
-
----
-
-> this isn't quite exactly JS-behind-the-scenes accurate, condition checks actually eval code at runtime. but that's for later. i'll find out where/how at some point
 
 ___
 ___
