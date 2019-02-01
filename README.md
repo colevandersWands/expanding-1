@@ -70,7 +70,7 @@ To go from the original code to the expanded code, it is best to go one small ch
 So, to start the exercises paste this framework into the console.  Then paste the test cases and original code you want to study into the blanks, run it once to make sure everything is in order.  After you've fully expanded the snippet, paste it from the console into this README and move on to the next challenge.
 
 ```js
-{
+expanding_framework: {
   const test_cases = ;
   for (let _case of test_cases) {
   
