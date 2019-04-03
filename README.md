@@ -15,8 +15,9 @@ it will be your task to expand the original snippet until it has one operation p
 * [learning objectives](#learning-objectives)
 * worked examples
     * [expressions](./1-expressions.md)  
-    * [conditionals](./2-conditionals.md)  
-    * [loops](./3-loops.md) 
+    * [in-place operators](./2-in-place-operators.md)  
+    * [conditionals](./3-conditionals.md)  
+    * [loops](./4-loops.md) 
 * Testing
     * [test cases](#test-cases)
     * [testing "framework"](#testing-framework)
