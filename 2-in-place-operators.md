@@ -19,8 +19,8 @@ b = val_1; }          // b -> 0
 **++a**  
 ```js
 let a = 0;
-let b; { // b = a++;
-  a = a - 1;          // a -> 1
+let b; { // b = ++a;
+  a = a + 1;          // a -> 1
   const val_1 = a;    
 b = val_1; }          // b -> 1
 ```
@@ -29,9 +29,9 @@ b = val_1; }          // b -> 1
 **a--**  
 ```js
 let a = 0;
-let b; { // b = a++;
+let b; { // b = a--;
   const val_1 = a;    
-  a = a + 1;          // a -> -1
+  a = a - 1;          // a -> -1
 b = val_1; }          // b -> 0
 ```
 ---
@@ -39,7 +39,7 @@ b = val_1; }          // b -> 0
 **--a**  
 ```js
 let a = 0;
-let b; { // b = a++;
+let b; { // b = --a;
   a = a - 1;          // a -> -1
   const val_1 = a;    
 b = val_1; }          // b -> -1
