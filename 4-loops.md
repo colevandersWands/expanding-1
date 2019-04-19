@@ -17,14 +17,16 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ### While loops
 
+[on pytut](http://www.pythontutor.com/live.html#code=let%20i%20%3D%200%3B%0Alet%20condition%20%3D%20i%20%3C%202%3B%0Awhile%20%28condition%29%20%7B%0A%20%20console.log%28i%20%2B%20'%20%28b%29'%29%3B%0A%20%20i%2B%2B%3B%0A%20%20condition%20%3D%20i%20%3C%202%3B%0A%7D&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)   
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20i%20%3D%200%3B%0Alet%20condition%20%3D%20i%20%3C%202%3B%0Awhile%20%28condition%29%20%7B%0A%20%20%2F%2F%20loop%20logic%20goes%20here%0A%20%20i%2B%2B%3B%0A%20%20condition%20%3D%20i%20%3C%202%3B%0A%7D)  
 ```js
 { // while loop
   let i = 0;
   while (i < 2) {
     console.log(i + ' (a)');
     i++;
-  };              
-};
+  }           
+}
 
 { // refactor out condition
   let i = 0;
@@ -33,8 +35,8 @@ these examples all contain 1-operation conditions that do not need to be expande
     console.log(i + ' (b)');
     i++;
     condition = i < 2;
-  };
-};
+  }
+}
 ```
 
 [TOP](#expanding-loops)
@@ -67,7 +69,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 { // refactor out condition
   let i = 0;
   { // do
-    console.log(i + ' (b)');
+    console.log(i + ' (c)');
     i++;  
   };
   let condition = i < 2;
@@ -84,6 +86,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ### For loops
 
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20i%20%3D%200%3B%0Alet%20condition%20%3D%20i%20%3C%202%3B%0Awhile%20%28condition%29%20%7B%0A%20%20%2F%2F%20loop%20logic%20goes%20here%0A%20%20i%2B%2B%3B%0A%20%20condition%20%3D%20i%20%3C%202%3B%0A%7D)  
 ```js
 { // original for loop
   for (let i = 0; i < 2; i++) {
@@ -111,8 +114,8 @@ these examples all contain 1-operation conditions that do not need to be expande
       console.log(i + ' (c)');
       i++;
       condition = i < 2;
-    };
-  };
+    }
+  }
 };
 ```
 [TOP](#expanding-loops)
@@ -121,20 +124,21 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ### For-Of loops
 
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=const%20arr%20%3D%20%5B0%2C%201%5D%0A%7B%20let%20i%20%3D%200%3B%0A%20%20let%20condition%20%3D%20i%20%3C%20arr.length%3B%0A%20%20while%20%28condition%29%20%7B%0A%20%20%20%20%2F%2F%20loop%20logic%20goes%20here%0A%20%20%20%20i%2B%2B%3B%0A%20%20%20%20condition%20%3D%20i%20%3C%20arr.length%3B%0A%20%20%7D%0A%7D)
 ```js
 { // for of loop
   const arr = [0, 1]
   for (let item of arr) {
     console.log(item + ' (a)');
-  };
-};
+  }
+}
 
 { // refactor to for loop
   const arr = [0, 1]
   for (let i = 0; i < arr.length; i++) {
     console.log(arr[i] + ' (b)');
   };
-};
+}
 
 { // refactor to while loop
   const arr = [0, 1]
@@ -142,9 +146,9 @@ these examples all contain 1-operation conditions that do not need to be expande
     while (i < arr.length) {
       console.log(arr[i] + ' (c)');
       i++;
-    };
-  };
-};
+    }
+  }
+}
 
 { // refactor out condition
   const arr = [0, 1]
@@ -154,8 +158,8 @@ these examples all contain 1-operation conditions that do not need to be expande
       console.log(arr[i] + ' (d)');
       i++;
       condition = i < arr.length;
-    };
-  };
+    }
+  }
 };
 ```
 [TOP](#expanding-loops)
@@ -164,7 +168,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ### For-In loops
 
-
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=const%20obj%20%3D%20%7Ba%3A%200%2C%20b%3A%201%7D%3B%0A%7B%20const%20keys%20%3D%20Object.keys%28obj%29%0A%20%20let%20i%20%3D%200%3B%0A%20%20let%20condition%20%3D%20i%20%3C%20keys.length%3B%0A%20%20while%20%28condition%29%20%7B%0A%20%20%20%20%2F%2F%20loop%20logic%20goes%20here%0A%20%20%20%20i%2B%2B%3B%0A%20%20%20%20condition%20%3D%20i%20%3C%20keys.length%3B%0A%20%20%7D%0A%7D)
 ```js
 { // for in loop
   const obj = {a: 0, b: 1};
@@ -203,8 +207,8 @@ these examples all contain 1-operation conditions that do not need to be expande
       console.log(keys[i]+': ', obj[keys[i]], ' (d)');
       i++;
       condition = i < keys.length;
-    };
-  };
+    }
+  }
 };
 ```
 [TOP](#expanding-loops)
