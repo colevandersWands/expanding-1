@@ -45,6 +45,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ### Do-While loops
 
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20i%20%3D%200%3B%0A%7B%20%2F%2F%20do%0A%20%20console.log%28i%20%2B%20'%20%28c%29'%29%3B%0A%20%20i%2B%2B%3B%20%20%0A%7D%0Alet%20condition%20%3D%20i%20%3C%202%3B%0Awhile%20%28condition%29%20%7B%0A%20%20console.log%28i%20%2B%20'%20%28c%29'%29%3B%0A%20%20i%2B%2B%3B%0A%20%20condition%20%3D%20i%20%3C%202%3B%0A%7D)  
 ```js
 { // do while
   let i = 0;
