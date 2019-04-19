@@ -125,7 +125,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ### For-Of loops
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=const%20arr%20%3D%20%5B0%2C%201%5D%0A%7B%20let%20i%20%3D%200%3B%0A%20%20let%20condition%20%3D%20i%20%3C%20arr.length%3B%0A%20%20while%20%28condition%29%20%7B%0A%20%20%20%20%2F%2F%20loop%20logic%20goes%20here%0A%20%20%20%20i%2B%2B%3B%0A%20%20%20%20condition%20%3D%20i%20%3C%20arr.length%3B%0A%20%20%7D%0A%7D)
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=const%20arr%20%3D%20%5B0%2C%201%5D%0A%7B%20let%20i%20%3D%200%3B%0A%20%20let%20condition%20%3D%20i%20%3C%20arr.length%3B%0A%20%20while%20%28condition%29%20%7B%0A%20%20%20%20%2F%2F%20next%20item%3A%20arr%5Bi%5D%0A%20%20%20%20i%2B%2B%3B%0A%20%20%20%20condition%20%3D%20i%20%3C%20arr.length%3B%0A%20%20%7D%0A%7D)
 ```js
 { // for of loop
   const arr = [0, 1]
@@ -169,7 +169,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 
 ### For-In loops
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=const%20obj%20%3D%20%7Ba%3A%200%2C%20b%3A%201%7D%3B%0A%7B%20const%20keys%20%3D%20Object.keys%28obj%29%0A%20%20let%20i%20%3D%200%3B%0A%20%20let%20condition%20%3D%20i%20%3C%20keys.length%3B%0A%20%20while%20%28condition%29%20%7B%0A%20%20%20%20%2F%2F%20loop%20logic%20goes%20here%0A%20%20%20%20i%2B%2B%3B%0A%20%20%20%20condition%20%3D%20i%20%3C%20keys.length%3B%0A%20%20%7D%0A%7D)
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=const%20obj%20%3D%20%7Ba%3A%200%2C%20b%3A%201%7D%3B%0A%7B%20const%20keys%20%3D%20Object.keys%28obj%29%0A%20%20let%20i%20%3D%200%3B%0A%20%20let%20condition%20%3D%20i%20%3C%20keys.length%3B%0A%20%20while%20%28condition%29%20%7B%0A%20%20%20%20%2F%2F%20next%20key%3A%20keys%5Bi%5D.%20next%20value%3A%20obj%5Bkeys%5Bi%5D%5D%0A%20%20%20%20i%2B%2B%3B%0A%20%20%20%20condition%20%3D%20i%20%3C%20keys.length%3B%0A%20%20%7D%0A%7D)
 ```js
 { // for in loop
   const obj = {a: 0, b: 1};
