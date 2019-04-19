@@ -67,7 +67,7 @@ these examples all contain 1-operation conditions that do not need to be expande
 { // refactor out condition
   let i = 0;
   { // do
-    console.log(i + ' (b)');
+    console.log(i + ' (c)');
     i++;  
   };
   let condition = i < 2;
