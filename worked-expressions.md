@@ -9,7 +9,15 @@ and/or using this [ast visualizer](https://astexplorer.net/)
 * using this for anything but just expressions will likely be more confusing than helpful
 * this tool doesn't check for syntax errors and doesn't run code, so keep it simple and just copy in the expression. no need for variable declarations
 
-and finally, using the testing framework in console will help you catch mistakes.
+To practice _incremental refactoring_, try to expand one operation at a time following the order of operations.  Study the worked examples below to see this in action.
+
+### Examples
+* [one](#1)
+* [two](#2)
+* [three](#3)
+
+> short-circuiting with ```||``` and ```&&```, an advanced gotcha: [worked expansion](./worked-short-circuiting.md), [codeburst: using || cleverly](https://codeburst.io/javascript-what-is-short-circuit-evaluation-ff22b2f5608c)  
+> The examples on this page do not expand short-circuiting
 
 ---
 
@@ -24,7 +32,28 @@ and finally, using the testing framework in console will help you catch mistakes
   const result = a || b === !c;
 };
 
-{ // expanded expression
+{ // set-up
+  const a = 1, b = 'e', c = true;
+  let result; { // a || b === !c;
+  result = a || b === !c;}
+};
+
+{ // operator 1
+  const a = 1, b = 'e', c = true;
+  let result; { // a || b === !c;
+    const op_1 = !c;
+  result = a || b === op_1;}
+};
+
+{ // operator 2
+  const a = 1, b = 'e', c = true;
+  let result; { // a || b === !c;
+    const op_1 = !c;
+    const op_2 = b === op_1;
+  result = a || op_2;}
+};
+
+{ // operator 3, expanded expression
   const a = 1, b = 'e', c = true;
   let result; { // a || b === !c;
     const op_1 = !c;
@@ -44,7 +73,28 @@ and finally, using the testing framework in console will help you catch mistakes
   const result = a < c && a >= b;
 };
 
-{ // expanded expression
+{ // set-up
+  const a = 0, b = null, c = ' ';
+  let result; { // a < c && a >= b;
+  result = a < c && a >= b; } 
+};
+
+{ // operator 1
+  const a = 0, b = null, c = ' ';
+  let result; { // a < c && a >= b;
+    const op_1 = a < c;
+  result = op_1 && a >= b; } 
+};
+
+{ // operator 2
+  const a = 0, b = null, c = ' ';
+  let result; { // a < c && a >= b;
+    const op_1 = a < c;
+    const op_2 = a >= b;
+  result = op_1 && op_2; } 
+};
+
+{ // operator 3, expanded expression
   const a = 0, b = null, c = ' ';
   let result; { // a < c && a >= b;
     const op_1 = a < c;
@@ -64,7 +114,47 @@ and finally, using the testing framework in console will help you catch mistakes
   const result = a < c || b < c || b < a;
 };
 
-{ // expanded expression
+{ // set-up
+  const a = 1e3, b, c = Infinity;
+  let result; { // = a < c || b < c || b < a;
+  result =  = a < c || b < c || b < a; }
+};
+
+{ // operator 1
+  const a = 1e3, b, c = Infinity;
+  let result; { // = a < c || b < c || b < a;
+    const op_1 = a < c;
+  result = op_1 || b < c || b < a; }
+};
+
+{ // operator 2
+  const a = 1e3, b, c = Infinity;
+  let result; { // = a < c || b < c || b < a;
+    const op_1 = a < c;
+    const op_2 = b < c;
+  result = op_1 || op_2 || b < a; }
+};
+
+{ // operator 3
+  const a = 1e3, b, c = Infinity;
+  let result; { // = a < c || b < c || b < a;
+    const op_1 = a < c;
+    const op_2 = b < c;
+    const op_3 = b < a;
+  result = op_1 || op_2 || op_3; }
+};
+
+{ // operator 4
+  const a = 1e3, b, c = Infinity;
+  let result; { // = a < c || b < c || b < a;
+    const op_1 = a < c;
+    const op_2 = b < c;
+    const op_3 = b < a;
+    const op_4 = op_1 || op_2;
+  result = op_4 || op_3; }
+};
+
+{ // operator 5,  expanded expression
   const a = 0, b = null, c = ' ';
   let result; { // a < c || b < c || b < a;
     const op_1 = a < c;
