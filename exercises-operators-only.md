@@ -290,7 +290,7 @@ run_tests(expression, test_cases);
 
 ### Five
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=%28%20a%20%3E%20Number%28b%29%20%29%20%7C%7C%20String%28c%29%0ANumber%28_%29%0A_%20%3E%20_%0AString%28_%29%0A_%20%7C%7C%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=%28%20a%20%3E%20Number%28b%29%20%29%20%7C%7C%20String%28c%29%0ANumber%28_%29%0A_%20%3E%20_%0AString%28_%29%0A_%20%7C%7C%20_)  
 
 ```js
 test_cases = [
@@ -377,7 +377,7 @@ run_tests(expression, test_cases);
 
 ### types & casting 3
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=Boolean%28b%29%20%3D%3D%3D%20Boolean%28Number%28a%29%29%0ABoolean%28b%29%0ANumber%28a%29%0ABoolean%28_%29%0A_%20%3D%3D%3D%20_)   
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=Boolean%28b%29%20%3D%3D%3D%20Boolean%28Number%28a%29%29%0ABoolean%28b%29%0ANumber%28a%29%0ABoolean%28_%29%0A_%20%3D%3D%3D%20_)   
 ```js
 test_cases = [
   {name: 'null, null', args: [null, null], expected: null},
@@ -398,7 +398,7 @@ run_tests(expression, test_cases);
 
 ### logical operators 1
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=!%28a%20%26%26%20!b%29%0A!_%0A_%20%26%26%20_%0A!%28_%29%0A%0A)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=!%28a%20%26%26%20!b%29%0A!_%0A_%20%26%26%20_%0A!%28_%29%0A%0A)  
 ```js
 test_cases = [
   {name: 'null, null', args: [null, null], expected: null},
@@ -414,7 +414,7 @@ run_tests(expression, test_cases);
 
 ### logical operators 2
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=!!a%20%7C%7C%20!!b%0A!a%0A!_%0A!b%0A!_%0A_%20%7C%7C%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=!!a%20%7C%7C%20!!b%0A!a%0A!_%0A!b%0A!_%0A_%20%7C%7C%20_)  
 ```js
 test_cases = [
   {name: 'null, null', args: [null, null], expected: null},
@@ -430,7 +430,7 @@ run_tests(expression, test_cases);
 
 ### logical operators 3
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=!!a%20%7C%7C%20!!b%0A!a%0A!_%0A!b%0A!_%0A_%20%7C%7C%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=!!a%20%7C%7C%20!!b%0A!a%0A!_%0A!b%0A!_%0A_%20%7C%7C%20_)  
 ```js
 test_cases = [
   {name: 'null, null, null', args: [null, null, null], expected: null},
@@ -450,7 +450,7 @@ run_tests(expression, test_cases);
 
 ### arithmetic operators 1
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=-%28a%20%2B%20b%29%20*%20c%0A_%20%2B%20_%0A-%28_%29%0A_%20*%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=-%28a%20%2B%20b%29%20*%20c%0A_%20%2B%20_%0A-%28_%29%0A_%20*%20_)  
 ```js
 test_cases = [
   {name: 'null, null, null', args: [null, null, null], expected: null},
@@ -466,7 +466,7 @@ run_tests(expression, test_cases);
 
 ### arithmetic operators 2
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=a%20**%20b%20%2F%20%2Bc%0A%2B_%0A_%20**%20_%0A_%20%2F%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=a%20**%20b%20%2F%20%2Bc%0A%2B_%0A_%20**%20_%0A_%20%2F%20_)  
 ```js
 test_cases = [
   {name: 'null, null, null', args: [null, null, null], expected: null},
@@ -483,7 +483,7 @@ run_tests(expression, test_cases);
 
 ### arithmetic operators 3
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=b%20%25%20c%20-%20a%20**%20c%20%2F%20b%0A_%20**%20_%0A_%20%2F%20_%0A_%20%25%20_%0A_%20-%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=b%20%25%20c%20-%20a%20**%20c%20%2F%20b%0A_%20**%20_%0A_%20%2F%20_%0A_%20%25%20_%0A_%20-%20_)  
 ```js
 test_cases = [
   {name: 'null, null, null', args: [null, null, null], expected: null},
@@ -503,7 +503,7 @@ run_tests(expression, test_cases);
 
 ### all primitive operators 1
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=a%20%25%20b%20%7C%7C%20!!a%0A_%20%25%20_%0A!a%0A!_%0A_%20%7C%7C%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=a%20%25%20b%20%7C%7C%20!!a%0A_%20%25%20_%0A!a%0A!_%0A_%20%7C%7C%20_)  
 ```js
 test_cases = [
   {name: 'null, null', args: [null, null], expected: null},
@@ -520,7 +520,7 @@ run_tests(expression, test_cases);
 
 ### all primitive operators 2
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=typeof%20a%20%3D%3D%3D%20'number'%20%2B%20a%0Atypeof%20_%0A_%20%3D%3D%3D%20_%0A_%20%2B%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=typeof%20a%20%3D%3D%3D%20'number'%20%2B%20a%0Atypeof%20_%0A_%20%3D%3D%3D%20_%0A_%20%2B%20_)  
 ```js
 test_cases = [
   {name: 'null, null', args: [null, null], expected: null},
@@ -535,7 +535,7 @@ run_tests(expression, test_cases);
 
 ### all primitive operators 3
 
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=!!%2Ba%20%3D%3D%3D%20Boolean%28a%29%0A%2B_%0A!_%0A!_%0ABoolean%28_%29%0A_%20%3D%3D%3D%20_)  
+[parsonized operators](https://janke-learning.github.io/parsonizer/?snippet=!!%2Ba%20%3D%3D%3D%20Boolean%28a%29%0A%2B_%0A!_%0A!_%0ABoolean%28_%29%0A_%20%3D%3D%3D%20_)  
 ```js
 test_cases = [
   {name: 'null', args: [null], expected: null},
