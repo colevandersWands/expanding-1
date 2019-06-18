@@ -8,53 +8,61 @@
 
 **a++**   
 
-[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20expression%20%3D%20a%2B%2B%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20%2B%201%3B%20%20%20%20%20%20%20%20%20%0Aexpanded%20%3D%20val_1%3B%20%7D%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20expression%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)   
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20b%20%3D%20a%2B%2B%3B%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20%2B%201%3B%20%20%20%20%20%20%20%20%20%20%0Ab%20%3D%20val_1%3B%20%7D%20%20%20%20%20%20%20%20%20%20)
+[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20operator%20%3D%20a%2B%2B%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20const%20return_val%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20%2B%201%3B%20%20%20%20%20%20%20%20%20%0Aexpanded%20%3D%20return_val%3B%20%7D%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20operator%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)   
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20%20%3D%20a%2B%2B%3B%0A%20%20const%20new_b%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20%2B%201%3B%20%20%20%20%0Ab%20%3D%20new_b%3B%20%7D%20%20%20%20)
 ```js
-let a = 0;
-let b; { // b = a++;
-  const val_1 = a;    
-  a = a + 1;          // a -> 1
-b = val_1; }          // b -> 0
+{
+  let a = 0;
+  let b; { //  = a++;
+    const new_b = a;    
+    a = a + 1;          // a -> 1
+  b = new_b; }          // b -> 0
+}
 ```
 ---
 
 **++a**  
 
-[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20expression%20%3D%20%2B%2Ba%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20a%20%3D%20a%20%2B%201%3B%20%20%20%20%20%20%20%20%20%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0Aexpanded%20%3D%20val_1%3B%20%7D%20%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20expression%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20b%20%3D%20%2B%2Ba%3B%0A%20%20a%20%3D%20a%20%2B%201%3B%20%20%20%20%20%20%20%20%20%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0Ab%20%3D%20val_1%3B%20%7D)  
+[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20operator%20%3D%20%2B%2Ba%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20a%20%3D%20a%20%2B%201%3B%20%20%20%20%20%20%20%20%20%0A%20%20const%20return_val%20%3D%20a%3B%20%20%20%20%0Aexpanded%20%3D%20return_val%3B%20%7D%20%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20operator%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20%20%3D%20%2B%2Ba%3B%0A%20%20a%20%3D%20a%20%2B%201%3B%0A%20%20const%20new_b%20%3D%20a%3B%20%20%20%20%0Ab%20%3D%20new_b%3B%20%7D)  
 ```js
-let a = 0;
-let b; { // b = ++a;
-  a = a + 1;          // a -> 1
-  const val_1 = a;    
-b = val_1; }          // b -> 1
+{
+  let a = 0;
+  let b; { //  = ++a;
+    a = a + 1;          // a -> 1
+    const new_b = a;    
+  b = new_b; }          // b -> 1
+}
 ```
 ---
 
 **a--**  
 
-[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20expression%20%3D%20a--%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%20%0Aexpanded%20%3D%20val_1%3B%20%7D%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20expression%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20b%20%3D%20a--%3B%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%20%20%0Ab%20%3D%20val_1%3B%20%7D%20%20%20%20%20%20%20%20%20%20)
+[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20operator%20%3D%20a--%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20const%20return_val%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%20%0Aexpanded%20%3D%20return_val%3B%20%7D%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20operator%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20%20%3D%20a--%3B%0A%20%20const%20new_b%20%3D%20a%3B%20%20%20%20%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%20%20%0Ab%20%3D%20new_b%3B%20%7D%20%20%20%20%20%20%20%20%20%20)
 ```js
-let a = 0;
-let b; { // b = a--;
-  const val_1 = a;    
-  a = a - 1;          // a -> -1
-b = val_1; }          // b -> 0
+{
+  let a = 0;
+  let b; { //  = a--;
+    const new_b = a;    
+    a = a - 1;          // a -> -1
+  b = new_b; }          // b -> 0
+}
 ```
 ---
 
 **--a**  
 
-[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20expression%20%3D%20--a%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%20%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0Aexpanded%20%3D%20val_1%3B%20%7D%20%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20expression%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
-[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20b%20%3D%20--a%3B%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%20%0A%20%20const%20val_1%20%3D%20a%3B%20%20%20%20%0Ab%20%3D%20val_1%3B%20%7D)
+[on pytut](http://www.pythontutor.com/live.html#code=let%20a%20%3D%200%3B%0Aconst%20operator%20%3D%20--a%3B%0A%0Aa%20%3D%200%3B%0Alet%20expanded%3B%20%7B%20%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%20%0A%20%20const%20return_val%20%3D%20a%3B%20%20%20%20%0Aexpanded%20%3D%20return_val%3B%20%7D%20%20%20%20%20%0A%0Aconsole.assert%28expanded%20%3D%3D%3D%20operator%29%3B&cumulative=false&curInstr=8&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
+[parsonized](https://janke-learning.github.io/parsonizer/?snippet=let%20a%20%3D%200%3B%0Alet%20b%3B%20%7B%20%2F%2F%20%20%3D%20--a%3B%0A%20%20a%20%3D%20a%20-%201%3B%20%20%20%20%20%20%20%20%0A%20%20const%20new_b%20%3D%20a%3B%20%20%20%20%0Ab%20%3D%20new_b%3B%20%7D%20%20%20%20%20%20%20%20)
 ```js
-let a = 0;
-let b; { // b = --a;
-  a = a - 1;          // a -> -1
-  const val_1 = a;    
-b = val_1; }          // b -> -1
+{
+  let a = 0;
+  let b; { //  = --a;
+    a = a - 1;          // a -> -1
+    const new_b = a;    
+  b = new_b; }          // b -> -1
+}
 ```
 ---
 
