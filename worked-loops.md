@@ -7,11 +7,11 @@ words
 these examples all contain 1-operation conditions that do not need to be expanded for simplicity.  you will want to expand conditions just like in if's if they are multi-step, this will help a lot in real-life debugging and developing.
 
 ### Contents
-* [while](#while)
-* [do while](#do-while)  
-* [for](#for) 
-* [for of](#for-of)  
-* [for in](#for-in)
+* [while](#while-loops)
+* [do while](#do-while-loops)  
+* [for](#for-loops) 
+* [for of](#for-of-loops)  
+* [for in](#for-in-loops)
 
 ---
 
