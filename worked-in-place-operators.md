@@ -1,6 +1,6 @@
 ## In-Place Operators
 
-[Increment & Decrement operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment).  these tricky operators actually do two operations in one statement: they read the value from the variable, and they change the value.  It's just a question of which happens first.
+[Increment & Decrement operators](https://codeburst.io/javascript-increment-and-decrement-8c223858d5ed).  these tricky operators actually do two operations in one statement: they read the value from the variable, and they change the value.  It's just a question of which happens first.
 
 ---
 
