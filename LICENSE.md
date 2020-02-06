@@ -1,6 +1,6 @@
-[![License: CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-sa/4.0/) :  2019 -> Present
+[![License: CC BY-SA-NC 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) :  2019 -> Present
 
-Licensed to Janke Learning: @janke-learning, janke-learning.org 
+Licensed to Janke Learning: @janke-learning, janke-learning.org
 
 Started by Evan Cole: @colevandersWands,  evan@elewa.education
 
